@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - BioArk Technologies</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/static/images/logo.png" alt="BioArk Technologies Logo">
+                        <span>BioArk Technologies</span>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="/products">Products</a>
+                            <div class="dropdown-content">
+                                <a href="/products/gene-editing">Gene Editing Products</a>
+                                <a href="/products/lab-supplies">Lab Supplies</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/services">Services</a>
+                            <div class="dropdown-content">
+                                <a href="/services/cloning">Custom Cloning Services</a>
+                                <a href="/services/lentivirus">Lentivirus Packaging Services</a>
+                                <a href="/services/cell-lines">Stable Cell Line Services</a>
+                            </div>
+                        </li>
+                        <li><a href="/design">Design</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/investors">Investors</a></li>
+                        <li><a href="/why-bioark">Why BioArk</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="/request-quote" class="btn-primary">Request Quote</a>
+                    <a href="/cart" class="cart-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 页面内容 -->
+    <main class="main-content">
+        <section class="contact-section">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Have questions about our products or services? We're here to help. Get in touch with our team today.</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <div class="info-item">
+                            <h3>Address</h3>
+                            <p>123 Science Park Road</p>
+                            <p>Cambridge, MA 02142</p>
+                        </div>
+                        
+                        <div class="info-item">
+                            <h3>Phone</h3>
+                            <p>(617) 555-0123</p>
+                        </div>
+                        
+                        <div class="info-item">
+                            <h3>Email</h3>
+                            <p>info@bioarktech.com</p>
+                        </div>
+                        
+                        <div class="info-item">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM EST</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h2>Send Us a Message</h2>
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BioArk Technologies</h3>
+                    <p>Your trusted CRO partner for advanced gene editing and delivery solutions.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>123 Science Park Road</p>
+                    <p>Cambridge, MA 02142</p>
+                    <p>Phone: (617) 555-0123</p>
+                    <p>Email: info@bioarktech.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 BioArk Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

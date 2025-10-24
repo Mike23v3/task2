@@ -1,0 +1,611 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* 容器样式 */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 链接样式 */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* 按钮样式 */
+.btn-primary {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background-color: #218838;
+    color: white;
+}
+
+.btn-outline {
+    display: inline-block;
+    background-color: transparent;
+    color: #007bff;
+    padding: 10px 20px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-outline:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* 段落样式 */
+p {
+    margin-bottom: 1rem;
+}
+
+/* 列表样式 */
+ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* 导航栏样式 */
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.nav-links a {
+    color: #333;
+    font-weight: 500;
+    padding: 10px 0;
+    display: block;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* 下拉菜单 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.nav-actions .btn-primary {
+    margin-right: 15px;
+}
+
+.cart-icon {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.cart-icon:hover {
+    color: #007bff;
+}
+
+/* 主内容区域 */
+.main-content {
+    padding: 40px 0;
+}
+
+/* 特色产品样式 */
+.featured-products {
+    background-color: white;
+    padding: 60px 0;
+    margin-bottom: 40px;
+}
+
+.featured-products h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.featured-products p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    padding: 20px 20px 10px;
+}
+
+.product-card p {
+    padding: 0 20px 20px;
+    text-align: left;
+}
+
+.product-card .btn-outline {
+    margin: 0 20px 20px;
+}
+
+/* 服务部分样式 */
+.our-services {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.our-services h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.our-services p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-column h4 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.footer-column p {
+    color: #adb5bd;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #495057;
+    color: #adb5bd;
+}
+
+/* 关于页面样式 */
+.about-section {
+    background-color: white;
+    padding: 60px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+}
+
+.about-text h2 {
+    margin-top: 20px;
+    color: #007bff;
+}
+
+/* 产品页面样式 */
+.products-section {
+    background-color: white;
+    padding: 60px 0;
+}
+
+.product-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.category-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-card h2 {
+    padding: 20px 20px 10px;
+    font-size: 1.5rem;
+}
+
+.category-card p {
+    padding: 0 20px 20px;
+}
+
+.category-card .btn-outline {
+    margin: 0 20px 20px;
+}
+
+/* 服务页面样式 */
+.services-section {
+    background-color: white;
+    padding: 60px 0;
+}
+
+.services-list {
+    margin-top: 40px;
+}
+
+.service-item {
+    display: flex;
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.service-details h2 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.service-details ul {
+    margin-bottom: 20px;
+}
+
+/* 联系页面样式 */
+.contact-section {
+    background-color: white;
+    padding: 60px 0;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item h3 {
+    font-size: 1.1rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.contact-form h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .nav-links ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .nav-links li {
+        margin: 5px 0;
+    }
+    
+    .nav-actions {
+        margin-top: 15px;
+    }
+    
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .service-icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}

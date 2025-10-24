@@ -1,0 +1,384 @@
+/**
+ * 轮播图样式设计
+ * 实现背景图片滑动和文字内容同步移动的视觉效果
+ * 
+ * 核心设计原则：
+ * - 层叠布局：图片在底层，文字在上层
+ * - 同步动画：图片和文字内容使用相同的过渡时间
+ * - 深度感：通过z-index和半透明效果创造视觉层次
+ * - 响应式：适配不同屏幕尺寸
+ */
+
+/* 轮播图外层容器 */
+.carousel-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #333;
+    margin-bottom: 0;
+}
+
+/* 轮播图主容器 - 固定高宽比 */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+/* 轮播图项目容器 - 相对定位作为绝对定位子元素的参照 */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 单个轮播图项目 - 核心动画元素 */
+.carousel-item {
+    position: absolute; /* 绝对定位使所有幻灯片重叠 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* 默认隐藏 */
+    /* 关键动画设置：透明度和变换的过渡效果 */
+    /* 这确保了图片和文字能够同步移动 */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 活动状态的轮播项目 */
+.carousel-item.active {
+    opacity: 1; /* 完全可见 */
+    z-index: 10; /* 置于顶层 */
+}
+
+/* 非活动状态的轮播项目 */
+.carousel-item.inactive {
+    opacity: 0;
+    z-index: 1;
+}
+
+/* 轮播图图片容器 - 底层图片层 */
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* 图片在底层 */
+}
+
+/* 轮播图图片 - 实现缩放效果 */
+.carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持宽高比填充容器 */
+    object-position: center;
+    /* 图片缩放动画 - 持续时间比内容切换长，创造渐进效果 */
+    transition: transform 0.8s ease-out;
+}
+
+/* 活动状态的图片 - 确保正确显示 */
+.carousel-item.active .carousel-image img {
+    transform: scale(1); /* 正常大小 */
+}
+
+/* 轮播图文字内容容器 - 上层文字层 */
+.carousel-content {
+    position: relative;
+    z-index: 2; /* 文字内容在上层 */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 文字左对齐 */
+    padding: 0 100px; /* 左侧内边距，确保文字不贴近边缘 */
+}
+
+.carousel-text {
+    max-width: 600px;
+    color: white;
+    text-align: left;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.carousel-item.active .carousel-text {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+/* 轮播图标题样式 */
+.carousel-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-text h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-text .highlight-text {
+    color: #28a745;
+}
+
+/* 轮播图描述样式 */
+.carousel-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* 轮播图按钮样式 */
+.carousel-text .btn-secondary {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-text .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* 轮播控制按钮 */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    transition: all 0.3s ease;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control.prev {
+    left: 30px;
+}
+
+.carousel-control.next {
+    right: 30px;
+}
+
+.carousel-control svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* 轮播指示器 */
+.carousel-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 50;
+}
+
+.carousel-indicators button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+    background-color: white;
+    width: 40px;
+    border-radius: 10px;
+}
+
+.carousel-indicators button:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* 轮播动画效果 */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.carousel-item.slide-in-left {
+    animation: slideInFromLeft 0.5s ease-in-out forwards;
+}
+
+.carousel-item.slide-in-right {
+    animation: slideInFromRight 0.5s ease-in-out forwards;
+}
+
+/* 响应式轮播图样式 */
+@media (max-width: 1200px) {
+    .carousel-container {
+        height: 500px;
+    }
+    
+    .carousel-content {
+        padding: 0 60px;
+    }
+    
+    .carousel-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .carousel-text h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .carousel-container {
+        height: 450px;
+    }
+    
+    .carousel-content {
+        padding: 0 40px;
+    }
+    
+    .carousel-text {
+        max-width: 500px;
+    }
+    
+    .carousel-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .carousel-text h2 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 400px;
+    }
+    
+    .carousel-content {
+        padding: 0 30px;
+        justify-content: center;
+    }
+    
+    .carousel-text {
+        text-align: center;
+        max-width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .carousel-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .carousel-text h2 {
+        font-size: 1.3rem;
+    }
+    
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-control.prev {
+        left: 15px;
+    }
+    
+    .carousel-control.next {
+        right: 15px;
+    }
+    
+    .carousel-indicators {
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-container {
+        height: 350px;
+    }
+    
+    .carousel-content {
+        padding: 0 20px;
+    }
+    
+    .carousel-text h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .carousel-text h2 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .carousel-text p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    .carousel-text .btn-secondary {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    
+    .carousel-control svg {
+        width: 20px;
+        height: 20px;
+    }
+}

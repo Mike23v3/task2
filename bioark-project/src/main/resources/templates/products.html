@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - BioArk Technologies</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/static/images/logo.png" alt="BioArk Technologies Logo">
+                        <span>BioArk Technologies</span>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="/products">Products</a>
+                            <div class="dropdown-content">
+                                <a href="/products/gene-editing">Gene Editing Products</a>
+                                <a href="/products/lab-supplies">Lab Supplies</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/services">Services</a>
+                            <div class="dropdown-content">
+                                <a href="/services/cloning">Custom Cloning Services</a>
+                                <a href="/services/lentivirus">Lentivirus Packaging Services</a>
+                                <a href="/services/cell-lines">Stable Cell Line Services</a>
+                            </div>
+                        </li>
+                        <li><a href="/design">Design</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/investors">Investors</a></li>
+                        <li><a href="/why-bioark">Why BioArk</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="/request-quote" class="btn-primary">Request Quote</a>
+                    <a href="/cart" class="cart-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 页面内容 -->
+    <main class="main-content">
+        <section class="products-section">
+            <div class="container">
+                <h1>Our Products</h1>
+                <p>Discover our comprehensive range of high-quality products designed to accelerate your research and deliver reliable results.</p>
+                
+                <div class="product-categories">
+                    <div class="category-card">
+                        <img src="/static/images/product1.jpg" alt="Gene Editing Products">
+                        <h2>Gene Editing Products</h2>
+                        <p>A comprehensive portfolio of tools for precise and efficient genome engineering, from CRISPR to viral vectors.</p>
+                        <a href="/products/gene-editing" class="btn-outline">Explore</a>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img src="/static/images/product2.jpg" alt="Lab Supplies">
+                        <h2>Lab Supplies</h2>
+                        <p>Reagents and kits for cloning, qPCR, markers, and transfection.</p>
+                        <a href="/products/lab-supplies" class="btn-outline">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BioArk Technologies</h3>
+                    <p>Your trusted CRO partner for advanced gene editing and delivery solutions.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>123 Science Park Road</p>
+                    <p>Cambridge, MA 02142</p>
+                    <p>Phone: (617) 555-0123</p>
+                    <p>Email: info@bioarktech.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 BioArk Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

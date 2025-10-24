@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - BioArk Technologies</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/static/images/logo.png" alt="BioArk Technologies Logo">
+                        <span>BioArk Technologies</span>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="/products">Products</a>
+                            <div class="dropdown-content">
+                                <a href="/products/gene-editing">Gene Editing Products</a>
+                                <a href="/products/lab-supplies">Lab Supplies</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/services">Services</a>
+                            <div class="dropdown-content">
+                                <a href="/services/cloning">Custom Cloning Services</a>
+                                <a href="/services/lentivirus">Lentivirus Packaging Services</a>
+                                <a href="/services/cell-lines">Stable Cell Line Services</a>
+                            </div>
+                        </li>
+                        <li><a href="/design">Design</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/investors">Investors</a></li>
+                        <li><a href="/why-bioark">Why BioArk</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="/request-quote" class="btn-primary">Request Quote</a>
+                    <a href="/cart" class="cart-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 页面内容 -->
+    <main class="main-content">
+        <section class="about-section">
+            <div class="container">
+                <h1>About BioArk Technologies</h1>
+                <p>BioArk Technologies is a leading provider of advanced gene editing and delivery solutions, dedicated to accelerating research from discovery to therapy. Our team of experts combines cutting-edge technology with scientific expertise to deliver high-quality products and services to researchers worldwide.</p>
+                
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="/static/images/about.jpg" alt="BioArk Technologies Lab">
+                    </div>
+                    <div class="about-text">
+                        <h2>Our Mission</h2>
+                        <p>To empower scientists with innovative tools and services that enable breakthrough discoveries in genomics and biotechnology, ultimately contributing to the development of novel therapeutics and diagnostics.</p>
+                        
+                        <h2>Our Vision</h2>
+                        <p>To become the global leader in gene editing technologies, recognized for our commitment to quality, innovation, and customer success.</p>
+                        
+                        <h2>Our Values</h2>
+                        <ul>
+                            <li>Excellence in everything we do</li>
+                            <li>Innovation and continuous improvement</li>
+                            <li>Integrity and ethical business practices</li>
+                            <li>Customer-centric approach</li>
+                            <li>Collaboration and teamwork</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BioArk Technologies</h3>
+                    <p>Your trusted CRO partner for advanced gene editing and delivery solutions.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>123 Science Park Road</p>
+                    <p>Cambridge, MA 02142</p>
+                    <p>Phone: (617) 555-0123</p>
+                    <p>Email: info@bioarktech.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 BioArk Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

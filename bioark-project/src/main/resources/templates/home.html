@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioArk Technologies - Gene Editing and Delivery Solutions</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/carousel.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/static/images/logo.png" alt="BioArk Technologies Logo">
+                        <span>BioArk Technologies</span>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="/products">Products</a>
+                            <div class="dropdown-content">
+                                <a href="/products/gene-editing">Gene Editing Products</a>
+                                <a href="/products/lab-supplies">Lab Supplies</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/services">Services</a>
+                            <div class="dropdown-content">
+                                <a href="/services/cloning">Custom Cloning Services</a>
+                                <a href="/services/lentivirus">Lentivirus Packaging Services</a>
+                                <a href="/services/cell-lines">Stable Cell Line Services</a>
+                            </div>
+                        </li>
+                        <li><a href="/design">Design</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/investors">Investors</a></li>
+                        <li><a href="/why-bioark">Why BioArk</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="/request-quote" class="btn-primary">Request Quote</a>
+                    <a href="/cart" class="cart-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 轮播图区域 -->
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel" id="mainCarousel">
+                <!-- 轮播图项目 -->
+                <div class="carousel-items" th:each="item, status : ${carouselItems}">
+                    <div class="carousel-item" th:classappend="${status.index} == 0 ? 'active' : ''">
+                        <div class="carousel-image">
+                            <img th:src="@{${item.imageUrl}}" th:alt="${item.title}">
+                        </div>
+                        <div class="carousel-content">
+                            <div class="carousel-text">
+                                <h1>
+                                    <span class="highlight-text" th:text="${item.title}"></span>
+                                </h1>
+                                <h2 th:text="${item.subtitle}"></h2>
+                                <p th:text="${item.description}"></p>
+                                <a th:href="@{${item.buttonLink}}" class="btn-secondary" th:text="${item.buttonText}"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 轮播控制按钮 -->
+            <button class="carousel-control prev" id="prevBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </button>
+            <button class="carousel-control next" id="nextBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </button>
+            
+            <!-- 轮播指示器 -->
+            <div class="carousel-indicators">
+                <button th:each="item, status : ${carouselItems}" 
+                        th:classappend="${status.index} == 0 ? 'active' : ''" 
+                        th:attr="data-index=${status.index}"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 特性产品部分 -->
+        <section class="featured-products">
+            <div class="container">
+                <h2>Featured Products</h2>
+                <p>High-performance reagents designed to accelerate your research and deliver reliable results.</p>
+                
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="/static/images/product1.jpg" alt="Gene Editing Products">
+                        <h3>Gene Editing Products</h3>
+                        <p>A comprehensive portfolio of tools for precise and efficient genome engineering, from CRISPR to viral vectors.</p>
+                        <a href="/products/gene-editing" class="btn-outline">Learn More</a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="/static/images/product2.jpg" alt="Lab Supplies">
+                        <h3>Lab Supplies</h3>
+                        <p>Reagents and kits for cloning, qPCR, markers, and transfection.</p>
+                        <a href="/products/lab-supplies" class="btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 服务部分 -->
+        <section class="our-services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p>Partner with our expert team for tailored services that meet your unique project requirements.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Custom Cloning Services</h3>
+                        <p>End-to-end plasmid design, cloning, synthesis, and delivery.</p>
+                        <a href="/services/cloning" class="btn-outline">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Lentivirus Packaging Services</h3>
+                        <p>High-titer lentivirus packaging with full QC and functional options.</p>
+                        <a href="/services/lentivirus" class="btn-outline">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Stable Cell Line Services</h3>
+                        <p>From vector design to monoclonal selection and validation.</p>
+                        <a href="/services/cell-lines" class="btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BioArk Technologies</h3>
+                    <p>Your trusted CRO partner for advanced gene editing and delivery solutions.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>123 Science Park Road</p>
+                    <p>Cambridge, MA 02142</p>
+                    <p>Phone: (617) 555-0123</p>
+                    <p>Email: info@bioarktech.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 BioArk Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 轮播图JavaScript -->
+    <script src="/static/js/carousel.js"></script>
+</body>
+</html>

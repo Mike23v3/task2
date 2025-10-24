@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - BioArk Technologies</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/static/images/logo.png" alt="BioArk Technologies Logo">
+                        <span>BioArk Technologies</span>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="/products">Products</a>
+                            <div class="dropdown-content">
+                                <a href="/products/gene-editing">Gene Editing Products</a>
+                                <a href="/products/lab-supplies">Lab Supplies</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/services">Services</a>
+                            <div class="dropdown-content">
+                                <a href="/services/cloning">Custom Cloning Services</a>
+                                <a href="/services/lentivirus">Lentivirus Packaging Services</a>
+                                <a href="/services/cell-lines">Stable Cell Line Services</a>
+                            </div>
+                        </li>
+                        <li><a href="/design">Design</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/investors">Investors</a></li>
+                        <li><a href="/why-bioark">Why BioArk</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="/request-quote" class="btn-primary">Request Quote</a>
+                    <a href="/cart" class="cart-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 页面内容 -->
+    <main class="main-content">
+        <section class="services-section">
+            <div class="container">
+                <h1>Our Services</h1>
+                <p>Partner with our expert team for tailored services that meet your unique project requirements.</p>
+                
+                <div class="services-list">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="m11.742 4.646-4.196 4.197-.707-.707L10.334 4l1.408 1.408-1.408 1.408 1.414 1.414L8 10.828 6.586 9.414 5.172 10.828l1.414 1.414-1.408 1.408L4 13.666l1.408-1.408-1.414-1.414L5.666 10l-1.408-1.408L4 7.334l1.408-1.408 1.414 1.414L6.586 8l1.414 1.414 1.414-1.414L9.414 8l1.414-1.414-1.414-1.414z"/>
+                            </svg>
+                        </div>
+                        <div class="service-details">
+                            <h2>Custom Cloning Services</h2>
+                            <p>End-to-end plasmid design, cloning, synthesis, and delivery tailored to your specific research needs.</p>
+                            <ul>
+                                <li>Vector design and optimization</li>
+                                <li>Gene synthesis and cloning</li>
+                                <li>Quality control and sequencing</li>
+                                <li>Large-scale plasmid preparation</li>
+                            </ul>
+                            <a href="/services/cloning" class="btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M6.5 12a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1zm-3-4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5v1zm-3-4a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V2a.5.5 0 0 0-.5-.5H1.5a.5.5 0 0 0-.5.5v2z"/>
+                            </svg>
+                        </div>
+                        <div class="service-details">
+                            <h2>Lentivirus Packaging Services</h2>
+                            <p>High-titer lentivirus packaging with full QC and functional options to support your gene delivery experiments.</p>
+                            <ul>
+                                <li>Standard and custom lentivirus production</li>
+                                <li>Titer determination and quality control</li>
+                                <li>Functional validation</li>
+                                <li>Concentrated virus preparations</li>
+                            </ul>
+                            <a href="/services/lentivirus" class="btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="m4.267.924-.992 9.012 5.614 1.286.992-9.012L4.267.924zm6.989 7.072-3.176 1.678.667-3.674-3.162-1.776 3.176-1.678-.667 3.674 3.162 1.776z"/>
+                            </svg>
+                        </div>
+                        <div class="service-details">
+                            <h2>Stable Cell Line Services</h2>
+                            <p>From vector design to monoclonal selection and validation, we provide comprehensive stable cell line development services.</p>
+                            <ul>
+                                <li>Cell line engineering</li>
+                                <li>Selection and screening</li>
+                                <li>Monoclonal isolation</li>
+                                <li>Cell line characterization and QC</li>
+                            </ul>
+                            <a href="/services/cell-lines" class="btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BioArk Technologies</h3>
+                    <p>Your trusted CRO partner for advanced gene editing and delivery solutions.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>123 Science Park Road</p>
+                    <p>Cambridge, MA 02142</p>
+                    <p>Phone: (617) 555-0123</p>
+                    <p>Email: info@bioarktech.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 BioArk Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
